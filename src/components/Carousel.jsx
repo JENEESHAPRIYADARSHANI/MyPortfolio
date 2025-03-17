@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
+import githubLogo from "../assets/github.svg";
+import linkedinLogo from "../assets/linkedin.svg";
+
 export const Carousel = ({ projects }) => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -168,7 +171,7 @@ export const Carousel = ({ projects }) => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src="src/assets/github.svg"
+                      src={githubLogo}
                       alt="GitHub"
                       className="w-12 h-12 bg-white rounded-full object-contain"
                     />
@@ -182,7 +185,7 @@ export const Carousel = ({ projects }) => {
                     rel="noopener noreferrer"
                   >
                     <img
-                      src="src/assets/linkedin.svg"
+                      src={linkedinLogo}
                       alt="LinkedIn"
                       className="w-10 h-10 bg-white object-contain"
                     />
