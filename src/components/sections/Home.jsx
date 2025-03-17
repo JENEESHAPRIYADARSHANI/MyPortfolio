@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"; // Import Framer Motion
 import { FloatingDoc } from "../FloatingDoc";
 import { useState, useEffect } from "react";
+import profilePic from "../assets/profile.jpg";
 
 export const Home = () => {
   const phrases = ["Web Developer", "Full Stack Developer"];
@@ -86,7 +87,7 @@ export const Home = () => {
         <div className="absolute w-3/4 md:w-[35%] h-[80%] bg-blue-500 rounded-full blur-[90px] opacity-60 animate-pulse transition-all duration-500 -z-10"></div>
         <img
           className="rounded-full w-52 h-52 sm:w-70 sm:h-70 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover shadow-lg"
-          src="src/assets/profile.jpg"
+          src={profilePic}
           alt="Jeneesha's Profile"
         />
       </motion.div>
