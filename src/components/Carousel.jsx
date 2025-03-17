@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { LiveBanner } from "./LiveBanner";
 
 import githubLogo from "../assets/github.svg";
 import linkedinLogo from "../assets/linkedin.svg";
@@ -63,9 +64,13 @@ export const Carousel = ({ projects }) => {
               x: 0,
               transition: { duration: 0.5, delay: 0.2 * index },
             }}
-            className="p-6 flex-shrink-0 w-72 sm:w-96 lg:w-105 h-[600px] rounded-xl border border-blue/100 bg-black text-white font-mono hover:shadow-lg hover:-translate-y-2 transition-transform cursor-pointer flex flex-col"
+            className="relative p-6 flex-shrink-0 w-72 sm:w-96 lg:w-105 h-[600px] rounded-xl border border-blue/100 bg-black text-white font-mono hover:shadow-lg hover:-translate-y-2 transition-transform cursor-pointer flex flex-col"
             onClick={() => setSelectedProject(project)}
           >
+            {project.title === "Personal Portfolio" && (
+              <LiveBanner liveLink={project.liveLink} />
+            )}
+
             <img
               src={project.image}
               alt={project.title}

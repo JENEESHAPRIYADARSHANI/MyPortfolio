@@ -60,10 +60,11 @@ export const Projects = () => {
         { name: "Tailwind CSS", image: tailwindImg },
     
       ],
-      link: "https://github.com/JENEESHAPRIYADARSHANI/portfolio",
+      link: "https://github.com/JENEESHAPRIYADARSHANI/MyPortfolio",
+      liveLink: "https://jeneeshapriyadarshani.github.io/MyPortfolio//", 
       image: portfolioImg,
       description1: ` 
-      My portfolio was built using React, Tailwind CSS, and Framer Motion to create a modern, responsive, and interactive experience
+      My portfolio was built using React, Tailwind CSS, and Framer Motion to create a modern, responsive, and interactive experience 
       `,
       description2: ` 
        I used React and tailwind CSS because they provide a fast and dynamic UI and Tailwind CSS ensures a clean and efficient design with minimal CSS overhead, respectively. 
