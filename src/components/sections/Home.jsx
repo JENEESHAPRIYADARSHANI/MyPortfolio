@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"; // Import Framer Motion
 import { FloatingDoc } from "../FloatingDoc";
 import { useState, useEffect } from "react";
-import profilePic from "../assets/profile.jpg";
+import profilePic from "../../assets/profile.jpg";
 
 export const Home = () => {
   const phrases = ["Web Developer", "Full Stack Developer"];
