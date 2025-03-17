@@ -96,7 +96,7 @@ export const Carousel = ({ projects }) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <img
-                  src="src/assets/github.svg"
+                  src={githubLogo}
                   alt="GitHub"
                   className="w-10 h-10 bg-white rounded-full object-contain"
                 />
