@@ -12,6 +12,12 @@ import { Accademics } from "./components/sections/Accademics";
 import { Certificate } from "./components/sections/Certificate";
 import { Footer } from "./components/Footer";
 
+{/* Google Analytics */}
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-MWVR9K73RB"); 
+ReactGA.send("pageview"); 
+
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
