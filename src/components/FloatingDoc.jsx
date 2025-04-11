@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const FloatingDoc = () => {
   const items = [
     {
       title: "GitHub",
-      href :"https://github.com/JENEESHAPRIYADARSHANI",   
+      href: "https://github.com/JENEESHAPRIYADARSHANI",
       icon: <FaGithub className="h-8 w-8" />,
     },
     {
@@ -20,6 +20,8 @@ export const FloatingDoc = () => {
       icon: <FaEnvelope className="h-8 w-8" />,
     },
   ];
+
+  const cvLink = "src/assets/Jeneesha_Priyadarshani.pdf";
 
   return (
     <>
@@ -39,20 +41,48 @@ export const FloatingDoc = () => {
             >
               <a
                 href={item.href}
-                className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center flex justify-start transition-all duration-300 ease-in-out transform hover:scale-110"
+                className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center transition-all duration-300 ease-in-out transform hover:scale-110"
               >
-                <div className="h-4 w-4">{item.icon}</div>
+                {item.icon}
               </a>
             </motion.div>
           ))}
+
+          {/* Download CV Icon Button (Mobile) */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+          >
+            <a
+              href={cvLink}
+              download
+              className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white hover:bg-blue-700 transition-all duration-300 ease-in-out"
+            >
+              <FaFileDownload className="h-5 w-5" />
+            </a>
+          </motion.div>
         </div>
       </div>
 
       {/* Desktop View */}
-      <div className="mx-auto ml-2 w-45  mt-6 hidden md:flex h-16 gap-6 items-end rounded-2xl bg-gray-50 dark:bg-neutral-900 px-2 pb-4 ">
-        {items.map((item) => (
-          <IconContainer key={item.title} {...item} />
-        ))}
+      <div className="mx-auto ml-2 w-45 mt-6 hidden md:flex flex-col gap-4 items-start">
+        <div className="flex h-16 gap-6 items-end rounded-2xl bg-gray-50 dark:bg-neutral-900 px-2 pb-4">
+          {items.map((item) => (
+            <IconContainer key={item.title} {...item} />
+          ))}
+        </div>
+
+        {/* Download CV Button (Desktop) */}
+        <a
+          href={cvLink}
+          download
+          className="flex items-center gap-2 rounded-full bg-blue-600 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-all duration-300 ease-in-out"
+        >
+          <FaFileDownload />
+          Download CV
+        </a>
       </div>
     </>
   );
