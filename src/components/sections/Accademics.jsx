@@ -97,7 +97,7 @@ export const Accademics = () => {
               Student ID: <span className="text-blue-300">26969</span>
             </p>
             <p className="text-sm sm:text-xl font-bold text-blue-400 mt-2">
-              GPA: 3.82
+              GPA: 3.83
             </p>
           </div>
         </div>
