@@ -11,7 +11,7 @@ export const FloatingDoc = () => {
     },
     {
       title: "LinkedIn",
-      href: "https://linkedin.com/in/your-profile",
+      href: "www.linkedin.com/in/jeneesha-priyadarshani-40734a253",
       icon: <FaLinkedin className="h-8 w-8" />,
     },
     {
