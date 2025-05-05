@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import image1 from "../../assets/3.png";
 import image2 from "../../assets/1.png";
 import image3 from "../../assets/2.png";
-
+import image4 from "../../assets/4.png";
 
 export const Accademics = () => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2]);
@@ -12,7 +12,8 @@ export const Accademics = () => {
   const results = [
     { id: 1, title: "Y1S1", imageSrc: image1, altText: "Y1S1" },
     { id: 2, title: "Y1S2", imageSrc: image2, altText: "Y1S2" },
-    { id: 3, title: "Y1S3", imageSrc: image3, altText: "Y1S3" },
+    { id: 3, title: "Y2S1", imageSrc: image3, altText: "Y2S1" },
+    { id: 4, title: "Y2S2", imageSrc: image4, altText: "Y2S2" },
   ];
 
   const positions = ["left", "center", "right"];
@@ -52,27 +53,31 @@ export const Accademics = () => {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-center">
           {/* Image Animation Section */}
           <div className="relative flex items-center justify-center bg-black h-[400px] sm:h-[500px] md:h-[600px] w-full sm:w-[800px] md:w-[1100px] overflow-hidden rounded-lg">
-            {results.map((result, index) => (
-              <motion.div
-                key={result.id}
-                className="absolute flex flex-col items-center"
-                initial="center"
-                animate={positions[positionIndexes[index]]}
-                variants={imageVariants}
-                transition={{ duration: 0.5 }}
-              >
-                <img
-                  src={result.imageSrc}
-                  alt={result.altText}
-                  className="rounded-lg w-[600px] sm:w-[600px] md:w-[800px]"
-                />
-                {positions[positionIndexes[index]] === "center" && (
-                  <p className="text-white text-sm sm:text-lg bg-black bg-opacity-50 px-3 py-1 rounded-md mt-2 z-10">
-                    {result.title}
-                  </p>
-                )}
-              </motion.div>
-            ))}
+            {/* Show only 3 images at a time */}
+            {positions.map((pos, i) => {
+              const result = results[positionIndexes[i]];
+              return (
+                <motion.div
+                  key={result.id}
+                  className="absolute flex flex-col items-center"
+                  initial="center"
+                  animate={pos}
+                  variants={imageVariants}
+                  transition={{ duration: 0.5 }}
+                >
+                  <img
+                    src={result.imageSrc}
+                    alt={result.altText}
+                    className="rounded-lg w-[600px] sm:w-[600px] md:w-[800px]"
+                  />
+                  {pos === "center" && (
+                    <p className="text-white text-sm sm:text-lg bg-black bg-opacity-50 px-3 py-1 rounded-md mt-2 z-10">
+                      {result.title}
+                    </p>
+                  )}
+                </motion.div>
+              );
+            })}
 
             {/* Back & Next Buttons */}
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-3 z-10">
