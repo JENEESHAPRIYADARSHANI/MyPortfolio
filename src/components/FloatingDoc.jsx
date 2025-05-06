@@ -11,7 +11,7 @@ export const FloatingDoc = () => {
     },
     {
       title: "LinkedIn",
-      href: "www.linkedin.com/in/jeneesha-priyadarshani-40734a253",
+      href: "https://www.linkedin.com/in/jeneesha-priyadarshani-40734a253",
       icon: <FaLinkedin className="h-8 w-8" />,
     },
     {
@@ -21,7 +21,7 @@ export const FloatingDoc = () => {
     },
   ];
 
-  const cvLink = "src/assets/Jeneesha_Priyadarshani.pdf";
+  const cvLink = "assets/Jeneesha_Priyadarshani.pdf";
 
   return (
     <>
