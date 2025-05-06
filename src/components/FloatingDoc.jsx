@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import CV from "../assets/Jeneesha_Priyadarshani.pdf";
+
+
 
 export const FloatingDoc = () => {
   const items = [
@@ -21,7 +24,7 @@ export const FloatingDoc = () => {
     },
   ];
 
-  const cvLink = "assets/Jeneesha_Priyadarshani.pdf";
+  const cvLink = CV;
 
   return (
     <>
