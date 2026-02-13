@@ -5,6 +5,7 @@ import image1 from "../../assets/3.png";
 import image2 from "../../assets/1.png";
 import image3 from "../../assets/2.png";
 import image4 from "../../assets/4.png";
+import image5 from "../../assets/5.png";
 
 export const Accademics = () => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2]);
@@ -14,6 +15,7 @@ export const Accademics = () => {
     { id: 2, title: "Y1S2", imageSrc: image2, altText: "Y1S2" },
     { id: 3, title: "Y2S1", imageSrc: image3, altText: "Y2S1" },
     { id: 4, title: "Y2S2", imageSrc: image4, altText: "Y2S2" },
+    { id: 5, title: "Y3S1", imageSrc: image5, altText: "Y3S1" },
   ];
 
   const positions = ["left", "center", "right"];
@@ -26,15 +28,15 @@ export const Accademics = () => {
 
   const handleNext = () => {
     setPositionIndexes((prevIndexes) =>
-      prevIndexes.map((prevIndex) => (prevIndex + 1) % results.length)
+      prevIndexes.map((prevIndex) => (prevIndex + 1) % results.length),
     );
   };
 
   const handleBack = () => {
     setPositionIndexes((prevIndexes) =>
       prevIndexes.map(
-        (prevIndex) => (prevIndex - 1 + results.length) % results.length
-      )
+        (prevIndex) => (prevIndex - 1 + results.length) % results.length,
+      ),
     );
   };
 
@@ -102,7 +104,7 @@ export const Accademics = () => {
               Student ID: <span className="text-blue-300">26969</span>
             </p>
             <p className="text-sm sm:text-xl font-bold text-blue-400 mt-2">
-              GPA: 3.82
+              GPA: 3.85
             </p>
           </div>
         </div>
